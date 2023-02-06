@@ -25,7 +25,7 @@ sudo docker run -it \
 
 ```bash
 URL="https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
-docker run -it \
+sudo docker run -it \
   --network=docker_sql_pgnetwork \
   taxi_ingest:v001 \
     --user=root \
