@@ -2,6 +2,9 @@
 docker-compose up -d
 ```
 
+```
+docker build -t taxi_ingest:v001 .
+```
 
 ### Inserting yellow_taxi_trips 
 ```bash
