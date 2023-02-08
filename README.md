@@ -1,11 +1,17 @@
-1. docker-compose up -d
+```
+docker-compose up -d
+```
 
+```
+docker build -t taxi_ingest:v001 .
+```
 
-2. inserting yellow_taxi_trips 
-
+### Inserting yellow_taxi_trips 
+```bash
 URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-01.csv.gz"
-docker run -it \
-  --network=dataengineering2_pgnetwork \
+
+sudo docker run -it \
+  --network=docker_sql_pgnetwork \
   taxi_ingest:v001 \
     --user=root \
     --password=root \
@@ -14,12 +20,13 @@ docker run -it \
     --db=ny_taxi \
     --table_name=yellow_taxi_trips \
     --url=${URL}
-	
-3. inserting taxi_zone_lookup
+```
+### Inserting taxi_zone_lookup after commenting lpep rows in ingest_data.py and rebuild.
 
+```bash
 URL="https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
-docker run -it \
-  --network=dataengineering2_pgnetwork \
+sudo docker run -it \
+  --network=docker_sql_pgnetwork \
   taxi_ingest:v001 \
     --user=root \
     --password=root \
@@ -28,3 +35,4 @@ docker run -it \
     --db=ny_taxi \
     --table_name=taxi_zone_lookup \
     --url=${URL}
+```
