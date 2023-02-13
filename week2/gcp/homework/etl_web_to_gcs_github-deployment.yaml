@@ -1,0 +1,60 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-web-to-gcs'
+###
+name: GitHub Storage Flow
+description: The main ETL function
+version: 3914cad5bf2f366f5a1859650412e96d
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {}
+schedule: null
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-web-to-gcs
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 29a9367b-a660-48e5-8c37-0a372db79b29
+  _block_document_name: anonymous-21d2aeff-8d0c-4ee4-8c00-098907fab7c4
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage:
+  repository: https://github.com/nuleviq/DEZoomCamp23
+  reference: null
+  access_token: null
+  _block_document_id: 97758bb6-6aea-4e51-989d-0fce4799cab5
+  _block_document_name: githubzoom
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: week2/gcp/homework/etl_web_to_gcs_blocks_hw.py:etl_web_to_gcs
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    color:
+      title: color
+      default: green
+      position: 0
+    year:
+      title: year
+      default: 2020
+      position: 1
+    month:
+      title: month
+      default: 11
+      position: 2
+  required: null
+  definitions: null
